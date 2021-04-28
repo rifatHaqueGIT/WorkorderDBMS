@@ -1,0 +1,21 @@
+<%- include('../partials/header'); %>
+
+<form action="/emplyee?view=true" method="POST" enctype="multipart/form-data">
+	<div class="mb-3 w-25">
+  		<label class="form-label">Name</label>
+  		<input type="text" class="form-control input-sm" id="Name" placeholder="Name">
+	</div>
+	<div class="mb-3 w-25">
+  		<label class="form-label">SIN</label>
+  		<input type="text" class="form-control input-sm" id="Sin" placeholder="SIN">
+	</div>
+	<div class="mb-3 w-25">
+  		<label class="form-label">Employee ID</label>
+  		<input type="text" class="form-control input-sm" id="employee_id" placeholder="Employee ID">
+	</div>
+	<div class="col-12">
+    	<button type="submit" class="btn btn-primary">Create</button>
+  	</div>
+</form>
+
+<%- include('../partials/footer'); %>

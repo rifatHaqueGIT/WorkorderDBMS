@@ -1,0 +1,39 @@
+<%- include('../partials/header'); %>
+<%- include('../partials/navbar', { back: "processWindow/"}) %>
+
+<div class="container">
+	<div class="row">
+    <div class="col">
+<h4>
+	Create Process:
+</h4>
+<form action="/createProcess?view=true" method="POST">
+	<div class="mb-3 w-25">
+		<label class="form-label">Order Numder: </label>
+		<select id="Order_No" name="Order_No" class="form-control drop-down">
+			<% for(const order of orders) { %>
+			<option value=<%= order.ord_number %>><%= order.ord_number %></option>
+			<% } %>
+		</select>
+	</div>
+	<div class="mb-3 w-25">
+		<label class="form-label">Work Station: </label>
+		<select id="Station_ID" name="Station_ID" class="form-control drop-down">
+			<% for(const station of workStations) { %>
+			<option value=<%= station.Station_ID %>><%= station.W_name %></option>
+			<% } %>
+		</select>
+	</div>
+	<div class="mb-3 w-25">
+  		<label class="form-label">Start Date</label>
+  		<input type="date" class="form-control input-sm" id="Start_Date" name="Start_Date" placeholder="date">
+	</div>
+	<div class="col-12">
+    	<button type="submit" class="btn btn-primary">Create</button>
+  	</div>
+</form>
+</div>
+</div>
+</div>
+
+<%- include('../partials/footer'); %>

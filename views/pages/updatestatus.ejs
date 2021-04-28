@@ -1,0 +1,30 @@
+<%- include('../partials/header'); %>
+<%- include('../partials/navbar', { back: "/viewOrders?view=true"}) %>
+<div class="container">
+	<div class="row">
+    <div class="col">
+<h4>
+	Update Status:
+</h4>
+<form action="/changeStatus/?_method=PUT&view=true" method="POST">
+	<div class="mb-3 w-25">
+  		<label class="form-label">Station ID</label>
+  		<input type="text" class="form-control input-sm" id="station_id" name="station_id" placeholder="Station ID">
+	</div>
+	<div class="mb-3 w-25">
+  		<label class="form-label">Completion Date</label>
+  		<input type="date" class="form-control input-sm" id="completion_date" name="completion_date" placeholder="Completion Date">
+	</div>
+	<div class="mb-3 w-25">
+  		<label class="form-label">Order Number</label>
+  		<input type="text" class="form-control input-sm" id="order_no" name="order_no" placeholder="Order Number">
+	</div>
+	<div class="col-12">
+    	<button type="submit" class="btn btn-primary">Update</button>
+  	</div>
+</form>
+		</div>
+	</div>
+</div>
+
+<%- include('../partials/footer'); %>

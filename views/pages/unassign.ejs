@@ -1,0 +1,32 @@
+<%- include('../partials/header'); %>
+<%- include('../partials/navbar', { back: 'assignWorkWindow'}) %>
+
+<div class="container">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-10 col-md-8 col-lg-6">
+			<form action="/unassign/?_method=DELETE&view=true" method="POST">
+				<div class="mb-3 w-25">
+					<label class="form-label">Employee: </label>
+					<select id="e_ID" name="e_ID" class="form-control drop-down">
+					<% for(const employee of employees) { %>
+						<option value=<%= employee.ID_NO %>><%= employee.Name %>							</option>
+					<% } %>
+					</select>
+				</div>
+				<div class="mb-3 w-25">
+					<label class="form-label">Work Station: </label>
+					<select id="s_ID" name="s_ID" class="form-control drop-down">
+					<% for(const station of workStations) { %>
+					<option value=<%= station.Station_ID %>><%= station.W_name %></option>
+					<% } %>
+					</select>
+				</div>
+				<div class="form-group">
+    				<button type="submit" class="btn btn-primary btn-customized">Delete</button>
+  				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<%- include('../partials/footer'); %>

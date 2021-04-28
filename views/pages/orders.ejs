@@ -1,0 +1,22 @@
+<%- include('../partials/header'); %>
+<%- include('../partials/navbar', { back: "" }) %>
+
+
+ <div class="my-4 py-4"> </div>
+
+ <div class="my-4 py-4"> </div>
+
+<section id="button">
+ 	<div class="container justify-content-center">
+          <div class="row justify-content-around">
+             <div class="col-12 col-md-6">
+                <a class="nav-link btn btn-outline-primary my-2" href="/makeorder">Create Order</a>
+             </div>
+             <div class="col-12 col-md-6">
+                <a class="nav-link btn btn-outline-secondary my-2" id="teal-btn" href="/vieworders?view=true">View Orders</a>
+             </div>
+          </div>
+       </div>
+</section>
+
+<%- include('../partials/footer'); %>

@@ -1,0 +1,45 @@
+<%- include('../partials/header'); %>	
+<%- include('../partials/navbar', { back: '/workstationWindow'}) %>
+
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-10 col-md-10 col-lg-10">
+			<h4>
+				All Equipment:
+			</h4>
+			<style>
+			p {
+ 				 color: navy;
+				}
+			</style>
+			<ul>
+				<% for(const equip of equipment ) { %>
+				<li class="row" style="padding-top: 1em; border-bottom: 1px solid black">
+					<div class="col">
+					<p class="col-2">
+						<strong>Serial Number:</strong> <%= equip.Serial_No %>
+					</p>
+					</div>
+					<div class="col">
+					<p class="col-2">
+						<strong>Workstation Name:</strong> <%= equip.W_name%>
+					</p>
+					</div>
+					<div class="col">
+					<p class="col-2">
+						<strong>Manager Name:</strong> <%= equip.Mname %>
+					</p>
+					</div>
+					<div class="col">
+					<p class="col-2">
+						<strong>Equipment Name:</strong> <%= equip.e_Name%>
+					</p>
+					</div>
+				</li>
+				<% } %>
+			</ul>
+		</div>
+	</div>
+</div>
+	
+<%- include('../partials/footer'); %>

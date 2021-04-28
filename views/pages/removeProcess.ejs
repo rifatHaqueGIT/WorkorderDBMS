@@ -1,0 +1,28 @@
+<%- include('../partials/header'); %>
+<%- include('../partials/navbar', { back: '/processWindow'}) %>
+
+<div class="container">
+    <div class="row h-15 justify-content-center align-items-center">
+        <div class="col-10 col-md-8 col-lg-6">
+			<form action="/removeProcess/?_method=DELETE&view=true" method="POST">
+				<!-- <div class="mb-3 w-25">
+  				<label class="form-label">Process ID</label>
+  				<input type="text" class="form-control input-sm" id="p_ID" name="p_ID" placeholder="Process ID">
+				</div> -->
+				<div class="mb-3 w-25">
+					<label class="form-label">Process: </label>
+					<select id="p_ID" name="p_ID" class="form-control drop-down">
+					<% for(const process of processes) { %>
+			<option value=<%= process.Process_ID %>><%= process.Process_ID %></option>
+			<% } %>
+		</select>
+	</div>
+				<div class="form-group">
+    				<button type="submit" class="btn btn-primary btn-customized">Delete</button>
+  				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<%- include('../partials/footer'); %>

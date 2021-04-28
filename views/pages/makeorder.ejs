@@ -1,0 +1,37 @@
+<%- include('../partials/header'); %>
+
+<!-- Navigation Bar -->
+<%- include('../partials/navbar', { back: "/orders" }) %>
+
+ <div class="my-4 py-4"> </div>
+
+ <div class="my-4 py-4"> </div>
+
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-10 col-md-8 col-lg-6">
+<form action="/makeorder?view=true" method="POST">
+	<div class="form-group">
+		<label class="form-label">Customer: </label>
+		<select id="customerid" name="customerid" class="form-control drop-down">
+			<% for(const customer of customers) { %>
+			<option value=<%= customer.Customer_ID %>><%= customer.Cname %></option>
+			<% } %>
+		</select>
+	</div>
+	<div class="form-group">
+  		<label class="form-label">Description: </label>
+  		<input type="text" class="form-control input-sm" id="description" name="description" placeholder="Description">
+	</div>
+	<div class="form-group">
+  		<label class="form-label">Required Date: </label>
+  		<input type="date" class="form-control input-sm" id="requireddate" name="requireddate" placeholder="Required Date">
+	</div>
+	<div class="col-12">
+    	<button type="submit" class="btn btn-primary btn-customized">Place Order</button>
+  	</div>
+</form>
+
+    </div>
+</div>
+<%- include('../partials/footer'); %>

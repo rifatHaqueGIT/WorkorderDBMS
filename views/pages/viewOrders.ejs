@@ -1,0 +1,40 @@
+<%- include('../partials/header'); %>	
+<%- include('../partials/navbar', { back: '/orders'}) %>
+
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-10 col-md-10 col-lg-10">
+			<h4>
+				All Orders:
+			</h4>
+			<ul>
+				<% for(const order of orders) { %>
+				<li class="row" style="padding-top: 1em; border-bottom: 1px solid black">
+					<p class="col-2">
+						<a href="/viewOrderStatus?ord_number=<%= order.ord_number %>&view=true">
+						Order Number:<%= order.ord_number %>
+						</a>
+					</p>
+					<p class="col-2">
+						<strong>Customer ID:</strong> <%= order.Customer_ID %>
+					</p>
+					<p class="col-2">
+						<strong>Customer Name:</strong> <%= order.Cname %>
+					</p>
+					<p class="col-3">
+						<strong>Description:</strong> <%= order.Descrip %>
+ 					</p>
+					<p class="col-4">
+						<strong>Start Date:</strong> <%= order.Start_Date %>
+					</p>
+					<p class="col-4">
+						<strong>Completed By:</strong> <%= order.End_Date %>
+					</p>
+				</li>
+				<% } %>
+			</ul>
+		</div>
+	</div>
+</div>
+	
+<%- include('../partials/footer'); %>

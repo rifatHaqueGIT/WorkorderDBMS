@@ -1,0 +1,57 @@
+<%- include('../partials/header'); %>
+<%- include('../partials/navbar', { back: '/viewOrders?view=true' }); %>
+
+ 
+ <div class="my-4 py-4"> </div>
+	<div class="container">
+	
+	<!-- Order Information -->
+	<h2>Order:</h2>
+		<p>Order Number: <%= order.ord_number %></p>
+		<p>Customer ID: <%= order.Customer_ID %></p>
+		<p>Descrip: <%= order.Descrip %></p>
+		<p>Start Date: <%= order.Start_Date %></p>
+		<p>Completed Date: <% if(order.End_Date) { %> <%= order.Start_Date %> <% } %></p>
+		<h2>
+		Work to be processed:
+		</h2>
+		<ul class="list-group">
+			<% for(const process of processes) { %>
+			   <li class="list-group-item"> Process ID: <%= process.Process_ID %>, Station ID: <%= process.Station_ID %>,Required Date: <%= process.End_Date %></li>
+			<% } %>
+		  </ul>
+		<h2>
+		Work processed:
+		</h2>
+		<ul class="list-group">
+			<% for(const p of processed) { %>
+			   <li class="list-group-item"> Process ID: <%= p.Process_ID %>, Station ID: <%= p.Station_ID %>,Finish Date<%= p.End_Date %></li>
+			<% } %>
+		  </ul>
+	</div>
+<div class="my-4 py-4"> </div>
+
+<section id="button">
+	<div class="container justify-content-center">
+	   <div class="row justify-content-around">
+		  <div class="col-12 col-md-6">
+			 <a class="nav-link btn btn-outline-primary my-2" href="/createProcess?view=true">Add Required Process</a>
+		  </div>
+		  <div class="col-12 col-md-6">
+			 <a class="nav-link btn btn-outline-primary my-2" id="teal-btn" href="/removeProcess?view=true">Remove Required Process</a>
+		  </div>
+		  <div class="col-12 col-md-6">
+			 <a class="nav-link btn btn-outline-primary my-2" id="orange-btn" href="/makeprocessed">Add Completed Process</a>
+		  </div>
+		  <div class="col-12 col-md-6">
+			 <a class="nav-link btn btn-outline-primary my-2" href="/removeProcessed">Remove Completed Process</a>
+		  </div>
+		  <div class="col-12 col-md-6">
+			  <!--work to be done -->
+			<a class="nav-link btn btn-outline-primary my-2" href="/changeStatus">Update Process</a>
+		 </div>
+	   </div>
+	</div>
+ </section>
+
+<%- include('../partials/footer'); %>

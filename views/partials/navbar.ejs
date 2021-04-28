@@ -1,0 +1,24 @@
+<!-- Navigation Bar -->
+<div class="row align-items-start">
+ <nav id="menu" class="navbar navbar-expand-md navbar navbar-dark bg-primary fixed-top">
+    <a class="navbar-brand" href="/">
+          Work Order Database
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+       aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+    </button>
+	 
+	 <!-- Only show back button if back was supplied to template -->
+	<% if(back != '') { %> 
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+		  <li class="nav-item active">
+			<a class="nav-link" href=<%= back %>>Back <span class="sr-only"></span></a>
+		  </li>
+		</ul>
+
+	 </div>
+	 <% } %>
+</nav>
+</div>

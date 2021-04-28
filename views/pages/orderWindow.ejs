@@ -1,0 +1,43 @@
+<%- include('../partials/header'); %>
+<!---- LEGACY CONTENT -->
+ <!-- Navigation Bar -->
+  <nav id="menu" class="navbar navbar-expand-md navbar navbar-dark bg-primary fixed-top">
+	<a class="navbar-brand" href="tings.html">
+		  Work Order Database
+	</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+	   aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+	   <span class="navbar-toggler-icon"></span>
+	</button>
+
+ </nav>
+
+ <div class="my-4 py-4"> </div>
+
+ <div class="my-4 py-4"> </div>
+<section id="button">
+	<div class="container justify-content-center">
+	   <div class="row justify-content-around">
+		  <div class="col-12 col-md-6">
+			 <a class="nav-link btn btn-outline-primary my-2" href="/makeorder">Add Order</a>
+		  </div>
+		  <div class="col-12 col-md-6">
+			 <a class="nav-link btn btn-outline-primary my-2" id="teal-btn" href="/removeOrder">Remove Order</a>
+		  </div>
+		  <div class="col-12 col-md-6">
+			 <a class="nav-link btn btn-outline-primary my-2" href="/updateOrder">Update Order</a>
+		  </div>
+		  <div class="col-12 col-md-6">
+			<a class="nav-link btn btn-outline-primary my-2" href="/getOrder">Find Order</a>
+		 </div>
+		 <div class="col-12 col-md-6">
+			<a class="nav-link btn btn-outline-primary my-2" id="orange-btn" href="/makeCustomer"> Add Customer</a>
+		 </div>
+		 <div class="col-12 col-md-6">
+			<a class="nav-link btn btn-outline-primary my-2" id="orange-btn" href="/removeCustomer"> Remove Customer</a>
+		 </div>
+	   </div>
+	</div>
+ </section>
+
+<%- include('../partials/footer'); %>

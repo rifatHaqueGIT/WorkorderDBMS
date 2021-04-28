@@ -1,0 +1,21 @@
+<%- include('../partials/header'); %>
+<!-->This Probably Should be a GET request </!--> 
+<form action="/process?view=true" method="POST" enctype="multipart/form-data">
+	<div class="mb-3 w-25">
+  		<label class="form-label">Report ID</label>
+  		<input type="text" class="form-control input-sm" id="Report_ID" placeholder="Report ID">
+	</div>
+	<div class="mb-3 w-25">
+  		<label class="form-label">Station ID</label>
+  		<input type="text" class="form-control input-sm" id="Station_ID" placeholder="Station ID">
+	</div>
+	<div class="mb-3 w-25">
+  		<label class="form-label">Employee ID</label>
+  		<input type="text" class="form-control input-sm" id="E_ID" placeholder="Employee ID">
+	</div>
+	<div class="col-12">
+    	<button type="submit" class="btn btn-primary">Create</button>
+  	</div>
+</form>
+
+<%- include('../partials/footer'); %>

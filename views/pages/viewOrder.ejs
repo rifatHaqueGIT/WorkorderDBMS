@@ -1,0 +1,20 @@
+<%- include('../partials/header'); %>	
+<%- include('../partials/navbar', { back: ''}) %>
+
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-10 col-md-8 col-lg-6">
+			<form action="/viewOrderStatus&view=true" method="GET">
+				<div class="form-group">
+  					<label class="form-label">Order Number: </label>
+  					<input type="text" class="form-control input-sm" id="ord_number" name="ord_number" placeholder="order_number">
+				</div>
+				<div class="col-12">
+    				<button type="submit" class="btn btn-primary btn-customized">View Order</button>
+  				</div>
+			</form>
+		</div>
+	</div>
+</div>
+	
+<%- include('../partials/footer'); %>

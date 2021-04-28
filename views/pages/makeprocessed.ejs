@@ -1,0 +1,33 @@
+<%- include('../partials/header'); %>
+
+<!-- Navigation Bar -->
+<%- include('../partials/navbar', { back: "/viewOrders?view=true" }) %>
+
+ <div class="my-4 py-4"> </div>
+
+ <div class="my-4 py-4"> </div>
+
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-10 col-md-8 col-lg-6">
+<form action="/makeprocessed?view=true" method="POST">
+	<div class="form-group">
+  		<label class="form-label">Process ID</label>
+  		<input type="text" class="form-control input-sm" id="processid" name="processid" placeholder="Process ID">
+	</div>
+	<!-- <div class="form-group">
+  		<label class="form-label">Station ID</label>
+  		<input type="text" class="form-control input-sm" id="stationid" name="stationid" placeholder="Station ID">
+	</div> -->
+	<div class="form-group">
+  		<label class="form-label">End Date</label>
+  		<input type="date" class="form-control input-sm" id="enddate" name="enddate" placeholder="End Date">
+	</div>
+	<div class="col-12">
+    	<button type="submit" class="btn btn-primary btn-customized">Create Processed</button>
+  	</div>
+</form>
+
+    </div>
+</div>
+<%- include('../partials/footer'); %>

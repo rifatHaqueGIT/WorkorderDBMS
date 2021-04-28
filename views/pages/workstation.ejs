@@ -1,0 +1,31 @@
+<%- include('../partials/header'); %>
+<%- include('../partials/navbar', { back: '/workstationWindow'}) %>
+<div class="my-1 py-1"> </div>
+
+ <div class="my-1 py-1"> </div>
+
+<div class="container-lg">
+	<form action="/workstation?view=true" method="POST">
+		<div class="mb-3 w-25">
+			<label class="form-label">Station ID</label>
+			<input type="text" class="form-control input-sm" id="station_id" placeholder="Station ID" name="station_id">
+		</div>
+		<div class="mb-3 w-25">
+			<label class="form-label">Workstation Name</label>
+			<input type="text" class="form-control input-sm" id="workstation_name" placeholder="Workstation Name" name="workstation_name">
+		</div>
+			<div class="mb-3 w-25">
+		<label class="form-label">Manager: </label>
+		<select id="manager_id" name="manager_id" class="form-control drop-down">
+			<% for(const manager of managers) { %>
+			<option value=<%= manager.ID_NO %>><%= manager.Mname %></option>
+			<% } %>
+		</select>
+	</div>
+		<div class="col-12">
+			<button type="submit" class="btn btn-primary">add</button>
+		</div>
+	</form>
+</div>
+
+<%- include('../partials/footer'); %>

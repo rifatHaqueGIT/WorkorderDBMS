@@ -1,0 +1,42 @@
+<%- include('../partials/header'); %>
+<%- include('../partials/navbar', { back: "/processWindow"}) %>
+<div class="container">
+	<div class="row">
+    <div class="col">
+<h4>
+	Update Process:
+</h4>
+<form action="/updateProcess/?_method=PUT&view=true" method="POST">
+<!--	<div class="mb-3 w-25">
+  		<label class="form-label">Process Id</label>
+  		<input type="text" class="form-control input-sm" id="Process_ID" name="Process_ID" placeholder="Process ID">
+	</div> -->
+	<div class="mb-3 w-25">
+		<label class="form-label">Process: </label>
+		<select id="Process_id" name="Process_id" class="form-control drop-down">
+			<% for(const process of processes) { %>
+			<option value=<%= process.Process_ID %>><%= process.Process_ID %></option>
+			<% } %>
+		</select>
+	</div>
+	<div class="mb-3 w-25">
+		<label class="form-label">Work Station: </label>
+		<select id="Station_id" name="Station_id" class="form-control drop-down">
+			<% for(const station of workStations) { %>
+			<option value=<%= station.Station_ID %>><%= station.W_name %></option>
+			<% } %>
+		</select>
+	</div>
+	<div class="mb-3 w-25">
+  		<label class="form-label">Start Date</label>
+  		<input type="date" class="form-control input-sm" id="Start_Date" name="Start_Date" placeholder="date">
+	</div>
+	<div class="col-12">
+    	<button type="submit" class="btn btn-primary">Update</button>
+  	</div>
+</form>
+		</div>
+	</div>
+</div>
+
+<%- include('../partials/footer'); %>
